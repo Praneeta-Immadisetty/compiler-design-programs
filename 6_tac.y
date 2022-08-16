@@ -118,32 +118,32 @@ void triple(){
 		if(id1==0){ 
 			printf("%d",id1);
 			printf("\t");
-			printf("%c",code[cnt].opr);
+			printf(" %c",code[cnt].opr);
 			printf("\t");
 			if(isalnum(code[cnt].opd1))
-				printf("%c\t",code[cnt].opd1);
+				printf(" %c\t",code[cnt].opd1);
 			else
 				{printf("%c\t",temp);}
 			cnt1=cnt-1;
 			if(isalnum(code[cnt].opd2))
-				printf("%c",code[cnt].opd2);
+				printf(" %c",code[cnt].opd2);
 			else
 				{printf("%c\t",temp);}
 		}
 		else{
 			printf("%d",id1);
 			printf("\t");
-			printf("%c",code[cnt].opr);
+			printf(" %c",code[cnt].opr);
 			printf("\t");
-			if(isalnum(code[cnt].opd1))
-				printf("%c\t",code[cnt].opd1);
+			if(code[cnt].opd1>='A' && code[cnt].opd1<='Z')
+				printf("(%d)\t",code[cnt].opd1-'B');
 			else
-				{printf("%c\t",temp);}
+				{printf(" %c\t",code[cnt].opd1);}
 			cnt1=cnt-1;
-			if(isalnum(code[cnt].opd2)) 
-				printf("(%d)",id1-1);
+			if(code[cnt].opd2>='A' && code[cnt].opd2<='Z')
+				printf("(%d)\t",code[cnt].opd2-'B');
 			else
-				{printf("%c\t",temp);}
+				{printf(" %c\t",code[cnt].opd2);}
 		}
 		printf("\n");
 		cnt++;
@@ -168,8 +168,8 @@ int main(){
 	ThreeAddressCode();
 	temp='A';
 	quadraple();
-	// temp='A';
-	// triple();
+	temp='A';
+	triple();
 	return 0;
 }
 
