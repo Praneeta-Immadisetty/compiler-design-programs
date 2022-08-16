@@ -3,3 +3,4 @@ lex.yy.c
 y.tab.c
 y.tab.h
 testcases.txt
+5_shift_precedence.c

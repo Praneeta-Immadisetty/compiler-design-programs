@@ -46,24 +46,23 @@ char toTAC(char a, char b, char c){
 
 void showTAC(){
     char var = 'A';
-    for(int i = 0; i < ct; i++){
-        printf("%c:= %c\t%c\t%c\n", var, tac[i].op1, tac[i].op, tac[i].op2);
-        var++;
+    for(int i = 0; i < ct; i++, var++){
+        printf("%c : = %c\t%c\t%c\n", var, tac[i].op1, tac[i].op, tac[i].op2);
     }
 }
 
 void quadruple(){
     char st = 'A';
-    for(int i = 0, ind = 0; i < ct; i++, ind++){
-        printf("%d\t%c\t%c\t%c\t%c\t\n", ind, tac[i].op, tac[i].op1, tac[i].op2, st++);
+    for(int i = 0; i < ct; i++){
+        printf("%d\t%c\t%c\t%c\t%c\t\n", i, tac[i].op, tac[i].op1, tac[i].op2, st++);
     }
 }
 
 void triple(){
     char st = 'A';
-    for(int i = 0, ind = 0; i < ct; i++, ind++){
+    for(int i = 0; i < ct; i++){
 
-        printf("%d\t%c\t", ind, tac[i].op);
+        printf("%d\t%c\t", i, tac[i].op);
         if(isupper(tac[i].op1)){
             printf("(%d)\t", tac[i].op1-'A');
         }
@@ -81,8 +80,7 @@ void triple(){
 
 void targetCode(){
 
-    char st = 'A';
-    char var = 'R';
+    char st = 'A', var = 'R';
     for(int i = 0; i < ct; i++){
         char op1 = tac[i].op1;
         char op2 = tac[i].op2;
