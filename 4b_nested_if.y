@@ -7,7 +7,7 @@ int count=0;
 %token IF RELOP S NUMBER ID NL
 
 %%
-stmt: if_stmt NL {printf("No. of nested if statements=%d\n",count);exit(0);}
+stmt: if_stmt NL {printf("No. of if statements=%d\n",count);exit(0);}
 ;
 if_stmt : IF'('cond')''{'if_stmt'}' {count++;}
     |S
@@ -19,15 +19,14 @@ x : ID
 ;
 %%
 
-int yyerror(char *msg)
-{
-printf("the statement is invalid\n");
-exit(0);
+int yyerror(char *msg){
+    printf("the statement is invalid\n");
+    exit(0);
 }
 
-main()
-{
-printf("enter the statement\n");
-yyparse();
+int main(){
+    printf("enter the statement\n");
+    yyparse();
+    return 0;
 }
 

@@ -12,13 +12,19 @@ FUN : TYPE '(' PARAM ')' '{' BODY '}'   // with parameters
 | TYPE '(' ')' '{' BODY '}'             // no parameters
 ;
 PARAM : TYPE ',' PARAM
-| TYPE 
-;       
-BODY : PARAM ';' BODY   // var declaration
+| TYPE
+;
+BODY : VAR ';' BODY   // var declaration
 | E ';' BODY            // statements   
 | RETURN E ';'          // return stat
 |                       // empty body
-;              
+;    
+VAR : TYPE ',' CHAINID  // int a,b,c
+| TYPE
+;     
+CHAINID : ID ',' CHAINID
+| ID
+;           
 E : ID '=' E
 | E '+' E
 | E '-' E

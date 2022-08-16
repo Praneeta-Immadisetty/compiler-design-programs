@@ -11,4 +11,3 @@
 \n {return NL;}
 . {return yytext[0];}
 %%
-int yywrap(){}

@@ -23,13 +23,12 @@ int comment=0,flag=0,c=1;
       }
 EOF return 0;
 %%
-int yywrap()
-{
-return 1;
+int yywrap() {
+   return 1;
 }
 void main(){
-yyin=fopen("test.c","r");
-yyout=fopen("v1.txt","w");
-yylex();
-printf("The number of comment lines are %d\n",comment);
+   yyin=fopen("test.c","r");
+   yyout=fopen("output.txt","w");
+   yylex();
+   printf("The number of comment lines are %d\n",comment);
 }

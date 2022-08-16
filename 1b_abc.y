@@ -18,10 +18,10 @@ B:Y B Z
 int main(){
 	printf("Enter the input: ");
 	yyparse();
-	printf("\nValid\n");
+	printf("Valid\n");
 	return 0;
 }
 void yyerror(void){
-	printf("\nInvalid\n");
+	printf("Invalid\n");
 	exit(0);
 }
